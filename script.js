@@ -257,8 +257,42 @@ document.addEventListener("DOMContentLoaded", () => {
   initMicro();
   initGallery();
   initReveal();
+  initSocialToast();
   document.body.style.opacity = 1;
 });
+
+function initSocialToast() {
+  const msgs = [
+    { icon: "👀", html: "<strong>3 kişi</strong> bu arsayı bugün görüntüledi" },
+    { icon: "💬", html: "<strong>Mehmet B.</strong> az önce WhatsApp'tan ulaştı" },
+    { icon: "📍", html: "<strong>2 kişi</strong> bu hafta randevu talep etti" },
+    { icon: "⏱️", html: "Ortalama dönüş süresi <strong>30 dakika</strong>" },
+    { icon: "✅", html: "<strong>Tapu hazır</strong> — devir 1 haftada tamamlanır" },
+  ];
+
+  const toast = document.createElement("div");
+  toast.className = "sp-toast";
+  toast.setAttribute("role", "status");
+  toast.setAttribute("aria-live", "polite");
+  toast.innerHTML =
+    '<div class="sp-toast-icon"></div>' +
+    '<div class="sp-toast-text"></div>';
+  document.body.appendChild(toast);
+
+  let idx = Math.floor(Math.random() * msgs.length);
+
+  function show() {
+    const m = msgs[idx % msgs.length];
+    toast.querySelector(".sp-toast-icon").textContent = m.icon;
+    toast.querySelector(".sp-toast-text").innerHTML = m.html;
+    toast.classList.add("show");
+    idx++;
+    setTimeout(() => toast.classList.remove("show"), 4500);
+  }
+
+  // İlk gösterim 10 saniye sonra, ardından her 40 saniyede bir
+  setTimeout(() => { show(); setInterval(show, 40000); }, 10000);
+}
 
 function initReveal() {
   const els = document.querySelectorAll(".reveal");
