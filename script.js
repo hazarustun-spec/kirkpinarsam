@@ -8,14 +8,15 @@ const T = {
     hero_cta_view: "İlanları İncele",
     lands_title: "Satılık Arsalar",
     land_btn: "Arsayı İncele",
-    contact_title: "Bilgi Alın",
+    contact_title: "Size özel fiyat ve detayları iletelim",
     contact_sub: "Soru sormak veya fiyat bilgisi almak için formu doldurun. En kısa sürede dönüş yapıyoruz.",
     form_name: "Ad Soyad", form_email: "E-posta",
-    form_phone: "Telefon (isteğe bağlı)", form_message: "Mesajınız",
-    form_send: "Gönder", form_sending: "Gönderiliyor…",
+    form_phone: "Telefon", form_message: "Mesajınız",
+    form_send: "Bilgi Al", form_sending: "Gönderiliyor…",
     form_sent: "✓ Mesajınız alındı — en kısa sürede dönüş yapacağız.",
     form_err_all: "Lütfen zorunlu alanları doldurun.",
     form_err_email: "Geçerli bir e-posta adresi girin.",
+    form_err_phone: "Lütfen telefon numaranızı girin.",
     form_err_send: "Gönderilemedi. Lütfen tekrar deneyin.",
     footer_copy: "Tüm hakları saklıdır.",
     wa_msg: "Merhaba, arsa hakkında bilgi almak istiyorum.",
@@ -25,6 +26,13 @@ const T = {
     cta_wa: "WhatsApp ile Ulaş", cta_form: "İletişim Formu",
     video_title: "Tanıtım Videosu", about_title: "Arsa Hakkında",
     specs_title: "Arsa Bilgileri",
+    trust_reply: "En kısa sürede dönüş yapılır",
+    appt_cta: "Bu arsayı görmek için randevu alın",
+    sticky_call: "Ara", sticky_form: "Bilgi Al",
+    micro_q: "Bu arsayı ne için düşünüyorsunuz?",
+    micro_inv: "Yatırım", micro_summer: "Yazlık", micro_konut: "Konut",
+    micro_proj: "Proje", micro_bungalov: "Bungalov Projesi",
+    map_title: "Konum",
   },
   en: {
     nav_lands: "Lands", nav_contact: "Contact",
@@ -35,14 +43,15 @@ const T = {
     hero_cta_view: "View Listings",
     lands_title: "Lands for Sale",
     land_btn: "View Land",
-    contact_title: "Get in Touch",
+    contact_title: "Get your exclusive price & details",
     contact_sub: "Fill in the form for questions or pricing details. We'll get back to you shortly.",
     form_name: "Full Name", form_email: "Email",
-    form_phone: "Phone (optional)", form_message: "Your Message",
-    form_send: "Send", form_sending: "Sending…",
+    form_phone: "Phone", form_message: "Your Message",
+    form_send: "Get Info", form_sending: "Sending…",
     form_sent: "✓ Your message has been received — we'll be in touch shortly.",
     form_err_all: "Please fill in all required fields.",
     form_err_email: "Please enter a valid email address.",
+    form_err_phone: "Please enter your phone number.",
     form_err_send: "Failed to send. Please try again.",
     footer_copy: "All rights reserved.",
     wa_msg: "Hi, I want information about the land.",
@@ -52,6 +61,13 @@ const T = {
     cta_wa: "Contact via WhatsApp", cta_form: "Contact Form",
     video_title: "Promotional Video", about_title: "About the Land",
     specs_title: "Land Details",
+    trust_reply: "We'll respond as soon as possible",
+    appt_cta: "Schedule a viewing appointment",
+    sticky_call: "Call", sticky_form: "Get Info",
+    micro_q: "What are you looking for?",
+    micro_inv: "Investment", micro_summer: "Holiday", micro_konut: "Residential",
+    micro_proj: "Project", micro_bungalov: "Bungalow Project",
+    map_title: "Location",
   },
   ar: {
     nav_lands: "الأراضي", nav_contact: "تواصل",
@@ -62,14 +78,15 @@ const T = {
     hero_cta_view: "استعرض الأراضي",
     lands_title: "أراضٍ للبيع",
     land_btn: "عرض الأرض",
-    contact_title: "تواصل معنا",
+    contact_title: "احصل على سعرك الخاص والتفاصيل",
     contact_sub: "أكمل النموذج للحصول على معلومات أو أسعار. سنتواصل معك قريباً.",
     form_name: "الاسم الكامل", form_email: "البريد الإلكتروني",
-    form_phone: "الهاتف (اختياري)", form_message: "رسالتك",
-    form_send: "إرسال", form_sending: "جارٍ الإرسال…",
+    form_phone: "الهاتف", form_message: "رسالتك",
+    form_send: "احصل على المعلومات", form_sending: "جارٍ الإرسال…",
     form_sent: "✓ تم استلام رسالتك — سنتواصل معك قريباً.",
     form_err_all: "يرجى ملء جميع الحقول المطلوبة.",
     form_err_email: "يرجى إدخال بريد إلكتروني صحيح.",
+    form_err_phone: "يرجى إدخال رقم هاتفك.",
     form_err_send: "فشل الإرسال. يرجى المحاولة مرة أخرى.",
     footer_copy: "جميع الحقوق محفوظة.",
     wa_msg: "مرحباً، أود الحصول على معلومات حول الأرض.",
@@ -79,11 +96,28 @@ const T = {
     cta_wa: "تواصل عبر واتساب", cta_form: "نموذج التواصل",
     video_title: "الفيديو التعريفي", about_title: "حول الأرض",
     specs_title: "تفاصيل الأرض",
+    trust_reply: "سنتواصل معك في أقرب وقت",
+    appt_cta: "احجز موعداً لمعاينة الأرض",
+    sticky_call: "اتصل", sticky_form: "معلومات",
+    micro_q: "ما الغرض من الأرض؟",
+    micro_inv: "استثمار", micro_summer: "اصطياف", micro_konut: "سكني",
+    micro_proj: "مشروع", micro_bungalov: "مشروع بنغالو",
+    map_title: "الموقع",
   }
 };
 
 const WA = "905063852311";
 let lang = localStorage.getItem("kpm_lang") || "tr";
+
+function updateWA() {
+  const amac = document.getElementById("amacInput")?.value || "";
+  const base = T[lang].wa_msg;
+  const full = amac ? `${base} (Amaç: ${amac})` : base;
+  const msg = encodeURIComponent(full);
+  document.querySelectorAll("[data-wa]").forEach(el => {
+    el.href = `https://wa.me/${WA}?text=${msg}`;
+  });
+}
 
 function setLang(l) {
   lang = l;
@@ -100,10 +134,7 @@ function setLang(l) {
     el.hidden = el.dataset.langShow !== l;
   });
 
-  const msg = encodeURIComponent(T[l].wa_msg);
-  document.querySelectorAll("[data-wa]").forEach(el => {
-    el.href = `https://wa.me/${WA}?text=${msg}`;
-  });
+  updateWA();
 
   document.querySelectorAll(".lang-btn").forEach(b => {
     b.classList.toggle("active", b.dataset.lang === l);
@@ -140,9 +171,12 @@ function initForm() {
     const spanEl = btn.querySelector("[data-i18n]");
     const name = form.elements.name?.value.trim();
     const email = form.elements.email?.value.trim();
+    const phone = form.elements.phone?.value.trim();
     const message = form.elements.message?.value.trim();
+    const amac = document.getElementById("amacInput")?.value || "";
     if (!name || !email || !message) return showMsg(msgEl, "error", t.form_err_all);
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showMsg(msgEl, "error", t.form_err_email);
+    if (!phone) return showMsg(msgEl, "error", t.form_err_phone);
     btn.disabled = true;
     if (spanEl) spanEl.textContent = t.form_sending;
     msgEl.style.display = "none";
@@ -150,11 +184,15 @@ function initForm() {
       const res = await fetch("https://formspree.io/f/mgonqabl", {
         method: "POST",
         headers: { "Accept": "application/json", "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, phone: form.elements.phone?.value || "", message, _subject: "Kırkpınarsam — Yeni Talep" })
+        body: JSON.stringify({ name, email, phone: form.elements.phone?.value || "", message, amac, _subject: "Kırkpınarsam — Yeni Talep" })
       });
       if (!res.ok) throw new Error();
       showMsg(msgEl, "success", t.form_sent);
       form.reset();
+      // clear micro selection
+      document.querySelectorAll(".micro-btn").forEach(b => b.classList.remove("selected"));
+      const inp = document.getElementById("amacInput");
+      if (inp) { inp.value = ""; updateWA(); }
     } catch {
       showMsg(msgEl, "error", t.form_err_send);
     } finally {
@@ -169,6 +207,21 @@ function showMsg(el, type, text) {
   el.textContent = text;
   el.style.display = "block";
   el.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+function initMicro() {
+  const btns = document.querySelectorAll(".micro-btn");
+  const inp = document.getElementById("amacInput");
+  if (!btns.length || !inp) return;
+  btns.forEach(b => {
+    b.addEventListener("click", () => {
+      const already = b.classList.contains("selected");
+      btns.forEach(x => x.classList.remove("selected"));
+      inp.value = already ? "" : b.textContent.trim();
+      if (!already) b.classList.add("selected");
+      updateWA();
+    });
+  });
 }
 
 function initGallery() {
@@ -201,6 +254,22 @@ document.addEventListener("DOMContentLoaded", () => {
   setLang(lang);
   initHamburger();
   initForm();
+  initMicro();
   initGallery();
+  initReveal();
   document.body.style.opacity = 1;
 });
+
+function initReveal() {
+  const els = document.querySelectorAll(".reveal");
+  if (!els.length) return;
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add("visible");
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  els.forEach(el => obs.observe(el));
+}
