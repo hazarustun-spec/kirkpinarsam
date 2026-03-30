@@ -146,18 +146,33 @@ function initHamburger() {
   const btn = document.querySelector(".hamburger");
   const menu = document.querySelector(".mobile-menu");
   if (!btn || !menu) return;
+  const closeMenu = () => {
+    menu.classList.remove("open");
+    btn.classList.remove("open");
+    btn.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  };
   btn.addEventListener("click", () => {
     const open = menu.classList.toggle("open");
     btn.classList.toggle("open", open);
     btn.setAttribute("aria-expanded", open);
     document.body.style.overflow = open ? "hidden" : "";
+    if (open) {
+      const first = menu.querySelector("a, button");
+      if (first) first.focus();
+    }
   });
-  menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
-    menu.classList.remove("open");
-    btn.classList.remove("open");
-    btn.setAttribute("aria-expanded", "false");
-    document.body.style.overflow = "";
-  }));
+  menu.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+  // Focus trap
+  menu.addEventListener("keydown", e => {
+    if (e.key === "Escape") { closeMenu(); btn.focus(); return; }
+    if (e.key !== "Tab") return;
+    const focusable = [...menu.querySelectorAll('a, button')];
+    if (!focusable.length) return;
+    const first = focusable[0], last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
 }
 
 function initForm() {
@@ -257,42 +272,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initMicro();
   initGallery();
   initReveal();
-  initSocialToast();
   document.body.style.opacity = 1;
 });
-
-function initSocialToast() {
-  const msgs = [
-    { icon: "👀", html: "<strong>3 kişi</strong> bu arsayı bugün görüntüledi" },
-    { icon: "💬", html: "<strong>Mehmet B.</strong> az önce WhatsApp'tan ulaştı" },
-    { icon: "📍", html: "<strong>2 kişi</strong> bu hafta randevu talep etti" },
-    { icon: "⏱️", html: "Ortalama dönüş süresi <strong>30 dakika</strong>" },
-    { icon: "✅", html: "<strong>Tapu hazır</strong> — devir 1 haftada tamamlanır" },
-  ];
-
-  const toast = document.createElement("div");
-  toast.className = "sp-toast";
-  toast.setAttribute("role", "status");
-  toast.setAttribute("aria-live", "polite");
-  toast.innerHTML =
-    '<div class="sp-toast-icon"></div>' +
-    '<div class="sp-toast-text"></div>';
-  document.body.appendChild(toast);
-
-  let idx = Math.floor(Math.random() * msgs.length);
-
-  function show() {
-    const m = msgs[idx % msgs.length];
-    toast.querySelector(".sp-toast-icon").textContent = m.icon;
-    toast.querySelector(".sp-toast-text").innerHTML = m.html;
-    toast.classList.add("show");
-    idx++;
-    setTimeout(() => toast.classList.remove("show"), 4500);
-  }
-
-  // İlk gösterim 10 saniye sonra, ardından her 40 saniyede bir
-  setTimeout(() => { show(); setInterval(show, 40000); }, 10000);
-}
 
 function initReveal() {
   const els = document.querySelectorAll(".reveal");
