@@ -73,7 +73,7 @@ const T = {
     nav_lands: "الأراضي", nav_contact: "تواصل",
     trust_deed: "الصك جاهز", trust_fast: "نقل سريع", trust_direct: "من المالك",
     hero_h1: "أرضان حصريتان للبيع",
-    hero_sub: "Kırkpınarsam — مباشرة من المالك، الصك جاهز، نقل سريع.",
+    hero_sub: "Şahinler Gayrimenkul — مباشرة من المالك، الصك جاهز، نقل سريع.",
     hero_cta_wa: "تواصل عبر واتساب",
     hero_cta_view: "استعرض الأراضي",
     lands_title: "أراضٍ للبيع",
@@ -184,7 +184,7 @@ function initForm() {
       const res = await fetch("https://formspree.io/f/mgonqabl", {
         method: "POST",
         headers: { "Accept": "application/json", "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, phone: form.elements.phone?.value || "", message, amac, _subject: "Kırkpınarsam — Yeni Talep" })
+        body: JSON.stringify({ name, email, phone: form.elements.phone?.value || "", message, amac, _subject: "Şahinler Gayrimenkul — Yeni Talep" })
       });
       if (!res.ok) throw new Error();
       showMsg(msgEl, "success", t.form_sent);
